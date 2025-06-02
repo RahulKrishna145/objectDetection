@@ -5,8 +5,8 @@ import json
 from pycocotools.coco import COCO
 
 # === Config ===
-annotations_path = 'C:\\Users\\aadithya\\Documents\\Armada\\Project\\data\\coco2017\\annotations\\person_keypoints_train2017.json'
-images_folder = 'C:\\Users\\aadithya\\Documents\\Armada\\Project\\data\\coco2017\\train2017'
+annotations_path = 'path_to_data\\coco2017\\annotations\\person_keypoints_train2017.json'
+images_folder = 'path_to_data\\coco2017\\train2017'
 output_csv = 'pose_labels.csv'
 
 # === Init ===

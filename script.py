@@ -10,9 +10,13 @@ images_folder = 'path_to_data\\coco2017\\train2017'
 output_csv = 'pose_labels.csv'
 
 # === Init ===
+# start_image_id = 000000000009
 coco = COCO(annotations_path)
 person_cat_id = coco.getCatIds(catNms=['person'])[0]
 img_ids = sorted(coco.getImgIds(catIds=[person_cat_id]))
+# for img_id in img_ids:
+#     if img_id < start_image_id:
+#         continue
 existing_annotations = set()
 
 # === Resume support ===

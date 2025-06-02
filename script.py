@@ -5,8 +5,8 @@ import json
 from pycocotools.coco import COCO
 
 # === Config ===
-annotations_path = 'path_to_data\\coco2017\\annotations\\person_keypoints_train2017.json'
-images_folder = 'path_to_data\\coco2017\\train2017'
+annotations_path = 'C:\\Users\\aadithya\\Documents\\Armada\\Project\\data\\coco2017\\annotations\\person_keypoints_train2017.json'
+images_folder = 'C:\\Users\\aadithya\\Documents\\Armada\\Project\\data\\coco2017\\train2017'
 output_csv = 'pose_labels.csv'
 
 # === Init ===
@@ -14,9 +14,6 @@ output_csv = 'pose_labels.csv'
 coco = COCO(annotations_path)
 person_cat_id = coco.getCatIds(catNms=['person'])[0]
 img_ids = sorted(coco.getImgIds(catIds=[person_cat_id]))
-# for img_id in img_ids:
-#     if img_id < start_image_id:
-#         continue
 existing_annotations = set()
 
 # === Resume support ===
@@ -51,6 +48,8 @@ print(
 )
 
 for img_id in img_ids:
+    # if img_id < start_image_id:
+    #     continue
     img_data = coco.loadImgs(img_id)[0]
     ann_ids = coco.getAnnIds(imgIds=img_id, catIds=[person_cat_id], iscrowd=None)
     anns = coco.loadAnns(ann_ids)

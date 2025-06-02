@@ -12,7 +12,7 @@ output_csv = 'pose_labels.csv'
 # === Init ===
 coco = COCO(annotations_path)
 person_cat_id = coco.getCatIds(catNms=['person'])[0]
-img_ids = coco.getImgIds(catIds=[person_cat_id])
+img_ids = sorted(coco.getImgIds(catIds=[person_cat_id]))
 existing_annotations = set()
 
 # === Resume support ===
